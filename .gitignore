@@ -163,3 +163,6 @@ output/
 flagged/
 tmpdir/
 .vscode/
+src/output/
+src/flagged/
+src/tmpdir/

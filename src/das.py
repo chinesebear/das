@@ -9,6 +9,7 @@ from excel_process import excel_process
 def check_path(path):
     if not os.path.exists(path):
         os.makedirs(path)
+        print(f"create {path}")
     print(f"{path} exists")
 
 def generate_file(files_obj, invoice):
@@ -57,10 +58,10 @@ def demo():
 
         # 创建 Gradio 应用程序g
         app = gr.Interface(fn=generate_file, inputs=[inputs,invoice], outputs=outputs,   title="DAS Solar数据处理模块",
-                      description="上传.xlsx文件,每个文件处理时间约3s,遇到问题请联系Eric Yang"
-      )
-
+                      description="上传.xlsx文件,每个文件处理时间约3s,遇到问题请联系Eric Yang")
         # 启动应用程序
-        app.launch(share=True)
+        app.launch(share=True,inbrowser=True, server_name ='0.0.0.0')
+        # app.launch(inbrowser=True, server_name ='0.0.0.0')
+
 if __name__=="__main__":
     demo()
