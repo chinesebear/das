@@ -15,7 +15,7 @@ def get_ctnr_num(input_path):
 def get_short_invoice(invoice):
     raw_data = invoice.split('-')
     short_invoice = f"{raw_data[1]}-{raw_data[2]}"
-    return short_invoice
+    return short_invoice.strip()
 
 def create_new_excel(path):
     if os.path.exists(path):
